@@ -125,7 +125,7 @@ anuais vindas de mídia paga** `[VALIDAR]`, somadas às conversões dos canais p
 ### 4.2 Campanhas → conjuntos → anúncios (cenário recomendado)
 
 Nomenclatura: `TM_BF26_[CAMPANHA]_[CONJUNTO]_[CRIATIVO]`. UTMs:
-`utm_source=meta&utm_medium=paid&utm_campaign=bf26_trademap&utm_content=[criativo]`.
+`utm_source=meta&utm_medium=paid_social&utm_campaign=bf2026-trademap&utm_content=[criativo]`.
 
 **C1 — `TM_BF26_REMKT` · Objetivo: Vendas · Evento: `Purchase` (assinatura anual) · CBO
 (orçamento na campanha) · 60% da verba**
@@ -179,7 +179,7 @@ Horários em BRT. Frequência máxima por pessoa: **1 e-mail e 1 push por dia**,
 |---|---|---|---|---|
 | **24/11 ter** | E1 · Esquenta "vem aí", com lista VIP/aviso, 10h | — | Banner "BF chegando" | Feed: anúncio da BF + 3 stories de contagem |
 | **25/11 qua** | — (descanso) | P1 · Esquenta, 19h | Banner | Stories: "o que o anual libera" (prints do app) |
-| **26/11 qui** | E2 · Prévia/acesso antecipado para free engajado e ex-assinantes (se aprovado), 18h | P2 · "Amanhã", 20h | Banner | Stories: contagem regressiva com sticker de lembrete |
+| **26/11 qui** | E2 · Esquenta 2: "é amanhã" (acesso antecipado removido pelo compliance, C-01), 18h | P2 · "Amanhã", 20h | Banner | Stories: contagem regressiva com sticker de lembrete |
 | **27/11 sex** | E3 · Abertura, 07h · E4 · Lembrete para não abridores, 19h | P3 · 08h · P4 · 20h | **Modal de oferta** + banner | Feed/Reels: abertura + stories com link (manhã e noite) |
 | **28/11 sáb** | E5 · Benefícios (o que libera), 10h | P5 · 11h | Banner | Stories |
 | **29/11 dom** | — (descanso) | P6 · 18h | Banner | Stories: "último dia amanhã" |

@@ -129,7 +129,7 @@ Assunto: aplicar o **estilo vencedor do A/B** de E01.
 > Amanhã, sexta-feira, 27/11, à 0h, começa a **Black Friday TradeMap**.
 >
 > A condição especial no plano anual do TradeMap [VALIDAR: nome do plano] fica no ar até
-> segunda-feira, 30/11, às 23h59 (horário de Brasília). Nem um minuto a mais.
+> segunda-feira, 30/11, às 23h59 (horário de Brasília). 
 >
 > Se você usa o TradeMap para acompanhar o mercado, a pergunta é simples: como você quer decidir
 > em 2027? Com parte dos dados ou com o dado completo, num só lugar?
@@ -138,10 +138,9 @@ Assunto: aplicar o **estilo vencedor do A/B** de E01.
 >
 > Equipe TradeMap
 
-**Bloco opcional "acesso antecipado"** (só se o produto aprovar liberar a oferta antes para a
-base, conforme `03-midia.md` §5) `[VALIDAR]`:
-> "Como você já usa o TradeMap, liberamos a sua condição algumas horas antes: ela já está
-> disponível a partir de [HORA] de hoje. [Ver minha condição]"
+~~Bloco opcional "acesso antecipado"~~ **Removido pelo compliance (`06-compliance.md`, C-01):**
+o período da oferta confirmado no brief começa em 27/11. Liberar antes exige atualizar o brief
+(data/hora de início) e o AL-2 em todas as peças, e tirar "Nem um minuto a mais"/"à 0h" deste e-mail.
 
 **CTA (botão):** Conhecer o plano anual `22/30`
 
@@ -242,8 +241,7 @@ Assunto: estilo vencedor do A/B (mesmas opções para os três segmentos, com a 
 
 > Olá, [NOME].
 >
-> Hoje você deu uma olhada no plano anual do TradeMap. Se ficou para depois, tudo bem: a
-> condição da Black Friday continua no ar.
+> Se o plano anual ficou para depois, tudo bem: a condição da Black Friday continua no ar.
 >
 > **Plano anual [VALIDAR: nome do plano] com [X]% off: R$ [PREÇO] por 12 meses.**
 >
@@ -512,7 +510,7 @@ UTMs: `utm_source=meta&utm_medium=paid_social&utm_campaign=bf2026-trademap&utm_c
 | Var. | Texto principal (≤ 125 visíveis) | Título (≤ 40) | Descrição (≤ 30) | CTA |
 |---|---|---|---|---|
 | PR-1 | Informação de nível profissional, preço de pessoa física. E na Black Friday, o plano anual do TradeMap sai [X]% menor. `118/125` | Dados profissionais, preço de PF `32/40` | [X]% off até 30/11, 23h59 `25/30` | Saiba mais |
-| PR-2 | Cotação qualquer site mostra. O TradeMap junta cotação, notícia, fundamento e sua carteira numa tela, para decidir melhor. `122/125` | Mais que cotação: contexto `26/40` | Plano anual com [X]% off `24/30` | Saiba mais |
+| PR-2 | Cotação qualquer site mostra. O TradeMap junta cotação, notícia, fundamento e sua carteira numa tela, para decidir com clareza. `122/125` | Mais que cotação: contexto `26/40` | Plano anual com [X]% off `24/30` | Saiba mais |
 | PR-3 | Mercado em tempo real, no Brasil e lá fora, com fundamentos e notícias ao lado. Plano anual com [X]% off até 30/11, 23h59. `122/125` | O mercado inteiro numa tela só `30/40` | Black Friday TradeMap `21/30` | Assinar |
 
 **Texto na arte (M1/M2 "Produto"):** "Informação de nível profissional. Preço de pessoa física." · print real do app · "[X]% off no plano anual até 30/11, 23h59" · AL-1.
@@ -779,7 +777,7 @@ Antes de 27/11 (se a página já estiver no ar): selo + "De 27 a 30/11" + "Condi
 1. Black Friday TradeMap: plano anual com [X]% off até 30/11, 23h59. Consulte condições. `85/90`
 2. Cotações e notícias em tempo real, fundamentos e sua carteira consolidada num só lugar. `87/90`
 3. Decida com dados o ano inteiro. Assine o plano anual do TradeMap com condição especial. `87/90`
-4. Conteúdo informativo. Não constitui recomendação de investimento. Oferta até 30/11. `83/90`
+4. Conteúdo informativo. Não constitui recomendação de investimento. Oferta até 30/11, 23h59. `90/90`
 
 > Fixar o título 1 na posição 1 e a descrição 4 na posição 2 garante a presença do aviso. `[VALIDAR com mídia]`
 
