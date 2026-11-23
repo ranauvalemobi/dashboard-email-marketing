@@ -1,6 +1,6 @@
 # Black Friday TradeMap 2026 — resumo executivo
 
-**Status:** ⏳ Aguardando OK · Compliance: ⚠️ aprovado com ajustes (1 alto corrigido, 8 médios, 6 baixos)
+**Status:** 🧪 Campanha de teste do time, não será veiculada · Compliance: ⚠️ aprovado com ajustes (1 alto corrigido, 8 médios, 6 baixos)
 
 | | |
 |---|---|
