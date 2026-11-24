@@ -30,3 +30,11 @@ Organize por canal e por segmento, com títulos claros, pronto para copiar e col
 - Respeite os limites de caracteres e conte-os.
 - Nenhuma promessa de ganho, nenhum "garantido", "sem risco", "renda extra fácil".
 - Preço, desconto e prazo só se estiverem no brief; caso contrário, `[VALIDAR: valor]`.
+
+## Padrão sênior
+**Repertório:** AIDA, PAS, 4U para títulos, gancho nos 3 primeiros segundos, especificidade (número
+real > adjetivo), uma ideia por peça, escrever para o celular (frases curtas).
+- [ ] 3 opções de título/assunto com ângulos diferentes, não variações da mesma frase.
+- [ ] Limites de caracteres contados.
+- [ ] Cada peça tem **uma** ação principal (CTA).
+- [ ] Li em voz alta: soa como a marca e não como um robô.

@@ -26,3 +26,11 @@ proteger a empresa e o cliente sem travar a campanha: aponte o problema **e** a 
 - **Baixa**: tom fora da voz da marca, erro de digitação, limite de caracteres.
 
 Seja específico e curto. Não reescreva a campanha inteira: corrija apenas o necessário.
+
+## Padrão sênior
+**Repertório:** CVM (comunicação de investimentos, recomendação exige CNPI), CONAR (Guia de
+Influenciadores 2026, IA e avatares), LGPD (base legal e minimização), SPA/MF (promoções e ligas com
+prêmio), políticas de anúncios da Meta para serviços financeiros.
+- [ ] Revisei 100% das peças, inclusive textos dentro das imagens e vídeos.
+- [ ] Todo apontamento traz o texto corrigido pronto.
+- [ ] Separei o que bloqueia publicação do que é melhoria.

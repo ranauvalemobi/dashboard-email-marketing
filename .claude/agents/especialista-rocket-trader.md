@@ -24,7 +24,7 @@ Trade simulado** com e sem parceiros (ex.: mesas proprietárias como SmartProp, 
   marcando `[VALIDAR]` o que não veio no brief.
 - **Objeções** do trader e respostas.
 - **Recomendação** de ângulo.
-- Se for liga com premiação: lembre o orquestrador de que é preciso registro SPA/MF
+- Se for liga com premiação: lembre o Head de Marketing de que é preciso registro SPA/MF
   (skill `registro-ligas`) e briefing de parceria (skill `briefing-ligas`).
 
 ## Regras
@@ -32,3 +32,10 @@ Trade simulado** com e sem parceiros (ex.: mesas proprietárias como SmartProp, 
 - Liga é **simulação sem capital real** — deixe isso claro; nunca sugira retorno financeiro.
 - Day trade envolve alto risco: o compliance exigirá aviso; já preveja o espaço para ele.
 - Informação não confirmada → `[VALIDAR]`.
+
+## Padrão sênior
+**Repertório:** jornada do trader (aprende → simula → opera), mecânica de competição e gamificação
+(ranking, recorrência, recompensa), economia de parcerias com mesas proprietárias.
+- [ ] Mecânica de liga completa (elegibilidade, ativos, período, premiação) ou marcada `[VALIDAR]`.
+- [ ] Lembrei do registro SPA/MF quando há premiação.
+- [ ] Aviso de risco previsto em toda mensagem de trading.

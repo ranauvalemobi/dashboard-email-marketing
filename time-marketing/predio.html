@@ -13,7 +13,7 @@
   --stage-a: #1E2030; --stage-b: #13141B;
   --a-orq: #F2F4F8; --a-tm: #01E59B; --a-rt: #1DA1F2; --a-me: #7BF6CF; --a-dados: #00EEFF;
   --a-midia: #F96500; --a-redator: #5999F8; --a-criativo: #E53F71; --a-compliance: #F50040;
-  --a-conteudo: #ACDFFF; --a-video: #F5B700;
+  --a-conteudo: #ACDFFF; --a-video: #F5B700; --a-qa: #E4E7EC; --a-parc: #C9A0FF;
   --f-display: "Montserrat", "Metropolis", "Segoe UI", system-ui, sans-serif;
   --f-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -27,7 +27,7 @@
     --stage-a: #FFFFFF; --stage-b: #E4E7EC;
     --a-orq: #353546; --a-tm: #00B278; --a-rt: #1A86CF; --a-me: #029D60; --a-dados: #0056FF;
     --a-midia: #D35400; --a-redator: #143B89; --a-criativo: #C42D5B; --a-compliance: #D10036;
-    --a-conteudo: #1A86CF; --a-video: #A86B00;
+    --a-conteudo: #1A86CF; --a-video: #A86B00; --a-qa: #5E5E6B; --a-parc: #7A3FD1;
   }
 }
 :root[data-theme="light"] {
@@ -38,7 +38,7 @@
   --stage-a: #FFFFFF; --stage-b: #E4E7EC;
   --a-orq: #353546; --a-tm: #00B278; --a-rt: #1A86CF; --a-me: #029D60; --a-dados: #0056FF;
   --a-midia: #D35400; --a-redator: #143B89; --a-criativo: #C42D5B; --a-compliance: #D10036;
-  --a-conteudo: #1A86CF; --a-video: #A86B00;
+  --a-conteudo: #1A86CF; --a-video: #A86B00; --a-qa: #5E5E6B; --a-parc: #7A3FD1;
 }
 [hidden] { display: none !important; }
 body {
@@ -132,6 +132,32 @@ dl.kv code { font: 500 12px var(--f-mono); }
 .log time { font: 500 11.5px var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 1px; }
 .log b { font-weight: 600; }
 .note { font-size: 11.5px; color: var(--muted); margin: 8px 0 0; }
+dialog#sheet { border: 0; padding: 0; background: transparent; max-width: min(880px, calc(100vw - 32px)); width: 100%; max-height: calc(100vh - 48px); color: var(--fg); }
+dialog#sheet::backdrop { background: rgba(10, 11, 16, .62); backdrop-filter: blur(3px); }
+.sh-box { position: relative; background: var(--surface); border: 1px solid var(--line-2); border-radius: 18px; padding: 22px 22px 24px; max-height: calc(100vh - 48px); overflow: auto; }
+.sh-x { position: absolute; right: 14px; top: 14px; width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--plate-2); color: var(--fg); font-size: 14px; cursor: pointer; }
+.sh-head { display: flex; flex-wrap: wrap; gap: 12px 14px; align-items: center; padding-right: 44px; margin-bottom: 16px; }
+.sh-head .avatar { width: 52px; height: 52px; border-radius: 14px; font-size: 17px; }
+.sh-head h2 { margin: 0; font: 700 21px var(--f-display); }
+.sh-head p { margin: 0; color: var(--muted); font-size: 13px; }
+.sh-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 680px) { .sh-grid { grid-template-columns: minmax(0, 1fr); } }
+.sh-grid section { background: var(--plate-2); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.sh-grid h3 { margin: 0 0 8px; font: 600 11px var(--f-display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.sh-grid h3 + p { margin: 0 0 10px; }
+.sh-grid p { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
+.sh-grid code { font: 500 12px var(--f-mono); }
+.does, .done, .tools { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 13px; }
+.does li { padding-left: 14px; position: relative; } .does li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
+.done li { padding-left: 22px; position: relative; } .done li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+.tools li { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.tst { flex: none; font: 600 11px var(--f-body); padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line-2); white-space: nowrap; }
+.tst.on { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+.tst.auth { color: var(--wait); border-color: color-mix(in srgb, var(--wait) 50%, transparent); }
+.tst.dev { color: var(--a-midia); border-color: color-mix(in srgb, var(--a-midia) 50%, transparent); }
+.tst.buy, .tst.local { color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips code { padding: 3px 8px; border-radius: 7px; background: var(--surface); border: 1px solid var(--line-2); }
 @keyframes pulse { 50% { opacity: .35; } }
 @media (prefers-reduced-motion: reduce) { .chip .sw, .steps li.now::before, .lbl .dot { animation: none !important; } }
 @media (max-width: 600px) { .sec span { display: none; } .hint { display: none; } .stage { height: max(380px, 118vw); } }
@@ -141,7 +167,7 @@ dl.kv code { font: 500 12px var(--f-mono); }
   <header class="top">
     <div class="brand">
       <h1>Escritório do Time de Marketing IA</h1>
-      <p>Valemobi · um andar em plano aberto, dividido em seis setores, com onze agentes. Reprodução da campanha de teste (Black Friday TradeMap).</p>
+      <p>Valemobi · um andar em plano aberto, dividido em seis setores, com treze agentes. Clique em um agente para ver a ficha completa. Reprodução da campanha de teste (Black Friday TradeMap).</p>
     </div>
     <div class="controls">
       <div class="seg" role="group" aria-label="Vista">
@@ -182,6 +208,10 @@ dl.kv code { font: 500 12px var(--f-mono); }
   </div>
 </div>
 
+<dialog id="sheet" aria-labelledby="sheetTitle">
+  <div class="sh-box"><button type="button" class="sh-x" id="sheetClose" aria-label="Fechar ficha">✕</button><div id="sheetBody"></div></div>
+</dialog>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
@@ -198,11 +228,11 @@ dl.kv code { font: 500 12px var(--f-mono); }
     { id: "dir", name: "Diretoria", sub: "orquestrador · entregas", c: "--a-orq", x0: -2, x1: 10, z0: -16, z1: -6, glass: true },
     { id: "mem", name: "Memória", sub: "base de conhecimento", c: "--accent", x0: 11, x1: 23, z0: -16, z1: -6 },
     { id: "cria", name: "Criação", sub: "redação · arte", c: "--a-criativo", x0: -23, x1: -8, z0: 0, z1: 16 },
-    { id: "cont", name: "Estúdio de Conteúdo", sub: "pauta · edição de vídeo", c: "--a-video", x0: -7, x1: 9, z0: 0, z1: 16 },
-    { id: "ctrl", name: "Compliance", sub: "regras · revisão", c: "--a-compliance", x0: 10, x1: 23, z0: -4, z1: 16 },
+    { id: "cont", name: "Estúdio de Conteúdo", sub: "redes · vídeo · influência", c: "--a-video", x0: -7, x1: 9, z0: 0, z1: 16 },
+    { id: "ctrl", name: "Controle", sub: "compliance · QA", c: "--a-compliance", x0: 10, x1: 23, z0: -4, z1: 16 },
   ];
   const AGENTS = [
-    { id: "orq", name: "Orquestrador", initials: "OR", role: "Diretor(a) de Marketing", sector: "dir", x: 1.5, z: -12.2, c: "--a-orq", skin: 0, hair: 0,
+    { id: "orq", name: "Head de Marketing", initials: "HM", role: "Coordena o time e pede o seu OK", sector: "dir", x: 1.5, z: -12.2, c: "--a-orq", skin: 0, hair: 0,
       file: "00-brief.md · README.md", def: "CLAUDE.md",
       summary: "Transforma o pedido em brief, distribui o trabalho entre os setores, aplica os ajustes do compliance e escreve o resumo executivo." },
     { id: "me", name: "Especialista ME", initials: "ME", role: "Minhas Economias", sector: "intel", x: -19.5, z: -13.2, c: "--a-me", skin: 2, hair: 3,
@@ -221,7 +251,7 @@ dl.kv code { font: 500 12px var(--f-mono); }
     { id: "redator", name: "Copywriter", initials: "CW", role: "Copy multicanal", sector: "cria", x: -19, z: 5, c: "--a-redator", skin: 1, hair: 1,
       file: "04-copy.md", def: ".claude/agents/copywriter.md",
       summary: "59 peças: 7 e-mails, 8 pushes, 4 in-app, 18 anúncios Meta, posts, stories e landing page. 191 limites de caracteres conferidos." },
-    { id: "criativo", name: "Designer", initials: "DS", role: "Conceito, arte e vídeo", sector: "cria", x: -12, z: 5, c: "--a-criativo", skin: 3, hair: 3, acc: "beret",
+    { id: "criativo", name: "Designer e Web", initials: "DW", role: "Artes, landing pages e e-mails HTML", sector: "cria", x: -12, z: 5, c: "--a-criativo", skin: 3, hair: 3, acc: "beret",
       file: "05-criativo.md", def: ".claude/agents/designer.md",
       summary: "Conceito “Ano inteiro, dado inteiro”: 47 arquivos visuais, 2 roteiros de vídeo e 25 prompts de geração." },
     { id: "conteudo", name: "Social media", initials: "SM", role: "Gestão das redes e calendário editorial", sector: "cont", x: -3, z: 5, c: "--a-conteudo", skin: 4, hair: 2,
@@ -233,7 +263,57 @@ dl.kv code { font: 500 12px var(--f-mono); }
     { id: "compliance", name: "Compliance", initials: "CP", role: "CVM, CONAR, LGPD, SPA/MF e marca", sector: "ctrl", x: 16.5, z: 3, c: "--a-compliance", skin: 0, hair: 4, acc: "glasses",
       file: "06-compliance.md", def: ".claude/agents/compliance.md",
       summary: "Aprovado com ajustes: 1 apontamento alto (corrigido), 8 médios, 6 baixos. Listou 10 pendências que bloqueiam as peças com oferta." },
+    { id: "qa", name: "QA de entrega", initials: "QA", role: "Revisão final antes do seu OK", sector: "ctrl", x: 13.5, z: 9.6, c: "--a-qa", skin: 3, hair: 1,
+      file: "09-qa.md", def: ".claude/agents/qa-entrega.md",
+      summary: "Função nova, não participou da campanha de teste. Confere links, UTMs, consistência entre peças e como tudo aparece no celular." },
+    { id: "parc", name: "Parcerias e Influência", initials: "PI", role: "Creators, parceiros e gêmeos digitais", sector: "cont", x: -3, z: 11, c: "--a-parc", skin: 5, hair: 2,
+      file: "10-influencia.md", def: ".claude/agents/parcerias-influenciadores.md",
+      summary: "Função nova, não participou da campanha de teste. Cuida do banco de influenciadores e produz conteúdo com o gêmeo digital de quem autorizou o uso por IA." },
   ];
+  // Ficha completa de cada agente (pop-up). status: on = conectado, auth = precisa autorizar, buy = a contratar, dev = precisa integrar, local = no ambiente
+  const PROFILE = {
+    orq: { does: ["Transforma o pedido em brief e define o escopo", "Escolhe quais equipes entram em cada trabalho", "Distribui as tarefas e roda em paralelo o que é independente", "Consolida a entrega e pede o seu OK", "Atualiza a base de conhecimento com o que o time aprende"],
+      skills: ["/campanha", "/conteudo", "/video", "/resultado-campanha", "marketing:campaign-plan"],
+      tools: [["Agentes do time (.claude/agents)", "local"], ["GitHub (repositório do time)", "on"], ["Microsoft 365 · Outlook e Teams", "on"], ["Atlassian · Jira e Confluence", "on"], ["Claude Docs · documentos e planilhas", "on"]],
+      done: ["Escopo do checklist atendido, nada a mais", "Compliance e QA aprovados", "Resumo de 1 página com pendências e o que precisa de OK"] },
+    me: { does: ["Proposta de valor e ângulos do Minhas Economias", "Segmentos da base e a mensagem de cada um", "Objeções e respostas"], skills: ["marketing:competitive-brief"],
+      tools: [["MCP Minhas Economias", "auth"], ["Pesquisa na web", "local"]], done: ["Mensagem sem culpa e sem jargão", "Uma ação esperada por segmento", "Um ângulo principal recomendado"] },
+    rt: { does: ["Proposta de valor e ângulos da RocketTrader", "Mecânica de ligas e parcerias com mesas", "Segmentos de traders e objeções"], skills: ["briefing-ligas", "registro-ligas", "marketing:competitive-brief"],
+      tools: [["MCP RocketTrader", "auth"], ["Pesquisa na web", "local"]], done: ["Mecânica de liga completa ou marcada [VALIDAR]", "Registro SPA/MF lembrado quando há prêmio", "Aviso de risco previsto"] },
+    tm: { does: ["Proposta de valor e ângulos do TradeMap", "Escada free → pago e upsell de planos", "Objeções e concorrentes"], skills: ["marketing:competitive-brief"],
+      tools: [["Pesquisa na web", "local"]], done: ["Ângulo com insight, prova e objeção", "Nenhum preço sem fonte", "Um ângulo principal recomendado"] },
+    dados: { does: ["Entende a base e a jornada do cliente", "Desenha réguas por estágio e escolhe o canal", "Monta segmentos e metas", "Plano de mensuração, A/B e leitura dos resultados"],
+      skills: ["/resultado-campanha", "marketing:performance-report", "marketing:email-sequence", "dataviz", "xlsx"],
+      tools: [["Backoffice (CRM interno, AWS)", "dev"], ["Python / pandas", "local"]], done: ["Segmento reproduzível no backoffice", "Meta com linha de base", "Pressão de contato conferida"] },
+    midia: { does: ["Estratégia de tráfego e divisão de verba", "Monta e sobe campanhas pausadas", "Análise diária e otimização", "Públicos, criativos e regras de corte"],
+      skills: ["marketing:campaign-plan", "marketing:performance-report", "marketing:competitive-brief"],
+      tools: [["Meta Ads", "auth"], ["Pesquisa na web", "local"]], done: ["Toda campanha nasce pausada", "Nomes e UTMs no padrão", "Teto diário e regra de corte escritos"] },
+    redator: { does: ["Todos os textos: e-mail, push, in-app, anúncios, posts, landing page", "Variações para teste A/B", "Adaptação ao tom de cada marca"],
+      skills: ["marketing:content-creation", "marketing:draft-content", "marketing:email-sequence", "marketing:brand-review"],
+      tools: [["Base de conhecimento (tom de voz)", "local"]], done: ["3 títulos com ângulos diferentes", "Limites de caracteres contados", "Uma ação principal por peça"] },
+    criativo: { does: ["Conceito visual e direção de arte", "Artes finais de posts, stories, anúncios e banners", "Landing pages em HTML e e-mails em HTML", "Testes A/B de página (CRO)"],
+      skills: ["canvas-design", "Figma: figma-use e figma-generate-design", "artifact-design"],
+      tools: [["Figma", "on"], ["Higgsfield · geração de imagem (plano gratuito, 10 créditos)", "on"], ["Valemobi Design System", "on"], ["Navegador para testar páginas (Playwright)", "local"]],
+      done: ["Mensagem lida em 2 s no celular", "Design System do produto aplicado", "Página e e-mail testados em 375 px e desktop"] },
+    conteudo: { does: ["Gestão das redes sociais dos três produtos", "Calendário editorial e pautas", "Roteiros de vídeo orgânico", "Indica posts para a Mídia Paga impulsionar"],
+      skills: ["/conteudo", "marketing:content-creation", "marketing:seo-audit"],
+      tools: [["Pesquisa na web", "local"], ["Agendamento e métricas das redes", "buy"]], done: ["Todos os pilares cobertos", "Gancho, CTA e formato nativo em cada post", "1 a 3 posts indicados para impulsionar"] },
+    video: { does: ["Cortes de lives e gravações", "Legendas, reenquadramento 9:16, áudio", "Geração de vídeo e avatares com IA", "Gestão da biblioteca de vídeos"],
+      skills: ["/video"],
+      tools: [["ffmpeg (edição local, sem custo)", "local"], ["Higgsfield · vídeo com IA (plano gratuito, 10 créditos)", "on"], ["HeyGen · avatares realistas", "buy"], ["ElevenLabs · voz", "buy"]],
+      done: ["Gancho em 3 s e legenda em 100%", "Áudio normalizado", "Custo de IA aprovado antes de gastar"] },
+    compliance: { does: ["Revisa todas as peças antes do QA", "CVM, CONAR, LGPD, SPA/MF e políticas de anúncios", "Entrega o texto corrigido de cada apontamento"],
+      skills: ["legal:compliance-check", "legal:legal-risk-assessment", "marketing:brand-review", "registro-ligas"],
+      tools: [["Regras de compliance (base de conhecimento)", "local"]], done: ["100% das peças revisadas", "Correção pronta em cada apontamento", "Bloqueios separados de melhorias"] },
+    qa: { does: ["Confere se a entrega bate com o brief", "Links, UTMs, datas e preços consistentes", "Renderização no celular e no desktop", "Corrige erros simples direto"],
+      skills: ["marketing:brand-review"],
+      tools: [["Navegador para testar páginas (Playwright)", "local"]], done: ["100% das peças conferidas", "Toda correção registrada", "Nenhum [VALIDAR] em peça pronta"] },
+    parc: { does: ["Seleciona e brifa influenciadores e parceiros", "Mantém o banco de influenciadores", "Produz conteúdo com o gêmeo digital de quem autorizou", "Briefings de ligas com parceiros"],
+      skills: ["briefing-ligas", "legal:review-contract"],
+      tools: [["Banco de influenciadores (base de conhecimento)", "local"], ["Higgsfield · imagens de referência", "on"], ["HeyGen · gêmeo digital", "buy"], ["ElevenLabs · voz autorizada", "buy"]],
+      done: ["Roteiro soa como a pessoa", "Autorização de IA conferida em cada peça", "Identificação de IA e #publi presentes"] },
+  };
+  const TOOL_TXT = { on: "Conectado", auth: "Precisa autorizar", buy: "A contratar", dev: "Precisa integrar", local: "No ambiente" };
   const EVENTS = [
     { t: 0, clock: "0:00", focus: "dir", phase: "brief", set: { orq: ["working", "Montando o brief"] }, log: "<b>Pedido recebido:</b> Black Friday TradeMap (teste)" },
     { t: 1.6, clock: "0:30", file: "00-brief.md", from: "orq", set: { orq: ["working", "Distribuindo tarefas"] }, log: "<b>Orquestrador</b> salvou 00-brief.md" },
@@ -269,8 +349,32 @@ dl.kv code { font: 500 12px var(--f-mono); }
       <div class="who"><div class="avatar" style="--c:var(${a.c})">${a.initials}</div><div><h2>${a.name}</h2><p>${a.role} · setor ${s.name}</p></div></div>
       <dl class="kv"><dt>Status</dt><dd><span class="pill ${st}">${STATUS_TXT[st]}${msg && st !== "waiting" ? ` · ${msg}` : ""}</span></dd>
       <dt>Entrega</dt><dd><code>${a.file}</code></dd><dt>Instruções</dt><dd><code>${a.def}</code></dd></dl>
-      <p class="summary">${a.summary}</p>`;
+      <p class="summary">${a.summary}</p>
+      <button type="button" class="btn" id="openSheet" style="margin-top:10px">Ver ficha completa</button>`;
+    $("#openSheet").addEventListener("click", () => openSheet(a.id));
   }
+  const sheet = $("#sheet");
+  function openSheet(id) {
+    const a = AGENTS.find((x) => x.id === id), p = PROFILE[id], s = SECTORS.find((x) => x.id === a.sector);
+    const [st, msg] = state.st[a.id] || ["idle"];
+    $("#sheetBody").innerHTML = `
+      <header class="sh-head"><div class="avatar" style="--c:var(${a.c})">${a.initials}</div>
+        <div><h2 id="sheetTitle">${a.name}</h2><p>${a.role} · setor ${s.name}</p></div>
+        <span class="pill ${st}">${STATUS_TXT[st]}${msg && st !== "waiting" ? ` · ${msg}` : ""}</span></header>
+      <div class="sh-grid">
+        <section><h3>O que faz</h3><ul class="does">${p.does.map((d) => `<li>${d}</li>`).join("")}</ul></section>
+        <section><h3>Ferramentas e MCPs</h3><ul class="tools">${p.tools.map(([t, k]) => `<li><span>${t}</span><span class="tst ${k}">${TOOL_TXT[k]}</span></li>`).join("")}</ul></section>
+        <section><h3>Skills que usa</h3><div class="chips">${p.skills.map((k) => `<code>${k}</code>`).join("")}</div></section>
+        <section><h3>Padrão sênior</h3><ul class="done">${p.done.map((d) => `<li>${d}</li>`).join("")}</ul></section>
+        <section><h3>Entrega</h3><p><code>${a.file}</code></p><h3>Instruções</h3><p><code>${a.def}</code></p></section>
+        <section><h3>Na campanha de teste</h3><p>${a.summary}</p></section>
+      </div>`;
+    if (!sheet.open) sheet.showModal();
+    $("#sheetClose").focus();
+  }
+  $("#sheetClose").addEventListener("click", () => sheet.close());
+  sheet.addEventListener("click", (e) => { if (e.target === sheet) sheet.close(); });
+
   function renderSide() {
     const order = ["brief", "intel", "cria", "ctrl", "entrega"], pi = order.indexOf(state.phase);
     $("#steps").querySelectorAll("li").forEach((li, i) => {
@@ -505,12 +609,14 @@ dl.kv code { font: 500 12px var(--f-mono); }
     [0, 2.1, 4.2].forEach((a) => { const l = cyl(0.025, 0.025, 1.4, MAT.dark, Math.cos(a) * 0.25, 0.68, Math.sin(a) * 0.25, cam); l.rotation.set(Math.sin(a) * 0.35, 0, -Math.cos(a) * 0.35); });
     box(0.36, 0.26, 0.5, MAT.dark, 0, 1.45, 0, cam); const lens = cyl(0.1, 0.12, 0.25, MAT.metal, 0, 1.45, 0.35, cam); lens.rotation.x = Math.PI / 2; })();
   plant(8.4, 1, 0.9); tallPlant(-6.4, 15);
+  desk(-3, 11.95, "parc", 1.3);
 
   // Compliance: rule library, filing cabinets, review desk
   shelf(13, -3.5, 0, 2.8); shelf(16.2, -3.5, 0, 2.8);
   [19.6, 20.6, 21.6].forEach((x) => { box(0.9, 1.3, 0.7, MAT.metal, x, 0.65, -3.4); [0.35, 0.75, 1.15].forEach((y) => box(0.3, 0.05, 0.02, MAT.dark, x, y, -3.04)); });
   desk(16.5, 3.95, "compliance", 1.3);
-  roundTable(16.5, 10.5, 1, 3);
+  roundTable(20, 11.5, 1, 3);
+  desk(13.5, 10.55, "qa", 1.2);
   plant(22.3, 15.3); tallPlant(10.8, 15.2); plant(22.3, 0.5, 0.9);
 
   // ------------------------------------------------------------------ characters
@@ -645,7 +751,7 @@ dl.kv code { font: 500 12px var(--f-mono); }
     });
     updateScreens();
   }
-  function select(id) { state.selected = id; renderAgents(); renderDetail(); }
+  function select(id, open = true) { state.selected = id; renderAgents(); renderDetail(); if (open) openSheet(id); }
 
   // ------------------------------------------------------------------ camera
   const VIEWS = { "3d": { phi: 0.96, theta: Math.PI / 4 }, top: { phi: 0.0001, theta: 0 } };

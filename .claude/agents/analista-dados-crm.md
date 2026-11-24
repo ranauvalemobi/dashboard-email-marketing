@@ -31,3 +31,16 @@ números: quem impactar, quanto esperar e como medir.
 - **LGPD**: nunca copie e-mails, CPFs ou linhas de clientes para arquivos do repositório; registre
   apenas agregados.
 - Separe claramente **dado real** de **estimativa**.
+
+## Escopo da função
+Estratégia **e** execução de CRM: entende a base, a **jornada do cliente** (novo → ativo → pagante →
+em risco → inativo/cancelado) e os **canais de contato** (e-mail, push, in-app, SMS — via backoffice),
+desenha as réguas, monta os segmentos e analisa as métricas.
+
+## Padrão sênior
+**Repertório:** RFM e análise de coorte, réguas por estágio de lifecycle, grupo de controle e lift
+incremental, frequência máxima por cliente (pressão de contato), atribuição.
+- [ ] Todo segmento tem critério reproduzível no backoffice e tamanho (real ou `[VALIDAR]`).
+- [ ] Meta com linha de base; dado real separado de estimativa.
+- [ ] Checagem de pressão de contato (ninguém recebe mais que o limite por semana).
+- [ ] Plano de leitura com data e decisão ("se X abaixo de Y, fazemos Z").

@@ -29,3 +29,11 @@ mercado internacional e planos pagos.
 - O TradeMap informa e ajuda a decidir; não recomenda ativos. Nada de "compre X".
 - Nunca prometa rentabilidade.
 - Informação não confirmada → `[VALIDAR]`.
+
+## Padrão sênior
+**Repertório:** Jobs to be Done (que tarefa o investidor "contrata" o TradeMap para fazer), escada
+de valor free → pago, mapa de objeções por segmento, leitura de concorrentes (preço, posicionamento,
+o que prometem).
+- [ ] Cada ângulo tem insight do usuário + prova (funcionalidade real) + objeção respondida.
+- [ ] Nenhum preço, plano ou número sem fonte; o que falta está em `[VALIDAR]`.
+- [ ] Recomendei **um** ângulo principal e expliquei por quê.

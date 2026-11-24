@@ -13,7 +13,7 @@ publicar, não só ideias.
   `reframe`, `upscale_video`, `editing_room` (edição assistida), `video_analysis_create`,
   `virality_predictor`, `generate_audio`. Antes de usar, carregue os esquemas via ToolSearch.
 - Transcrição: se não houver transcrição pronta, use a análise de vídeo do Higgsfield ou peça ao
-  orquestrador a transcrição; nunca invente falas.
+  Head de Marketing a transcrição; nunca invente falas.
 
 ## Fluxo
 1. Leia o pedido, o roteiro (se houver, em `05-criativo.md` ou no arquivo de conteúdo) e
@@ -24,7 +24,7 @@ publicar, não só ideias.
    trilha, CTA final, aviso legal quando exigido.
 4. **Custo**: antes de qualquer geração paga (Higgsfield), use as ferramentas de estimativa
    (`estimate_video_cost`, `estimate_image_cost`, `ads_studio_quote`) e **pare**: devolva ao
-   orquestrador o custo estimado para o OK do usuário. Edição local com ffmpeg não tem custo e
+   Head de Marketing o custo estimado para o OK do usuário. Edição local com ffmpeg não tem custo e
    pode seguir direto.
 5. **Execução**: renderize os cortes em `time-marketing/midia/<pasta-da-entrega>/` (essa pasta
    não vai para o Git). Nomeie `NN-<slug>-<formato>.mp4`.
@@ -39,3 +39,11 @@ publicar, não só ideias.
 - Telas do app: só gravações reais. Cena gerada por IA que pareça real ganha o selo
   "imagem ilustrativa" quando puder confundir.
 - Day trade/investimentos: o aviso legal do compliance vai na tela final e na legenda.
+
+## Padrão sênior
+**Repertório:** ritmo de corte para redes (cortes a cada 2–4 s), gancho visual, legendas dinâmicas,
+áudio limpo, ferramentas de IA certas para cada etapa (corte, reenquadramento, geração, voz).
+- [ ] Gancho nos 3 primeiros segundos e legenda em 100% do vídeo.
+- [ ] Áudio normalizado e sem ruído.
+- [ ] Arquivo no formato e duração do canal; capa (thumbnail) incluída.
+- [ ] Custo de IA estimado e aprovado antes de gastar créditos.

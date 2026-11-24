@@ -17,58 +17,41 @@ Abra uma sessão do Claude Code neste repositório e escreva, por exemplo:
 /video transformar a live da liga de ontem em 5 cortes verticais
 ```
 
-Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o time.
+Ou simplesmente peça em linguagem natural — o Head de Marketing entende e aciona o time.
 
-## O prédio
+## O escritório
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│ 5º ANDAR · DIRETORIA                                         │
-│   Orquestrador (sessão principal) — brief, distribuição,     │
-│   consolidação, pede o seu OK                                │
-├──────────────────────────────────────────────────────────────┤
-│ 4º ANDAR · CONTROLE                                          │
-│   compliance — CVM, CONAR, LGPD, SPA/MF, marca               │
-├──────────────────────────────────────────────────────────────┤
-│ 3º ANDAR · ESTÚDIO DE CONTEÚDO             (contínuo)        │
-│   estrategista-conteudo · editor-video-ia                    │
-├──────────────────────────────────────────────────────────────┤
-│ 2º ANDAR · CRIAÇÃO                         (em paralelo)     │
-│   copywriter · designer                                      │
-├──────────────────────────────────────────────────────────────┤
-│ 1º ANDAR · INTELIGÊNCIA                    (em paralelo)     │
-│   especialista-minhas-economias · especialista-rocket-trader │
-│   especialista-trademap · analista-dados-crm ·               │
-│   estrategista-midia-paga                                    │
-├──────────────────────────────────────────────────────────────┤
-│ SUBSOLO · MEMÓRIA                                            │
-│   conhecimento/ (produto, público, tom de voz, conteúdo,     │
-│   padrões de vídeo, histórico)                               │
-└──────────────────────────────────────────────────────────────┘
-```
+Um andar em plano aberto, dividido em setores (veja em 3D em `predio.html`):
 
-| Agente | Arquivo | Entrega |
-|---|---|---|
-| Especialista do produto | `.claude/agents/especialista-*.md` | `01-produto.md` |
-| Analista de dados & CRM | `.claude/agents/analista-dados-crm.md` | `02-dados.md` |
-| Estrategista de mídia | `.claude/agents/estrategista-midia-paga.md` | `03-midia.md` |
-| Copywriter | `.claude/agents/copywriter.md` | `04-copy.md` |
-| Designer | `.claude/agents/designer.md` | `05-criativo.md` |
-| Compliance | `.claude/agents/compliance.md` | `06-compliance.md` |
-| Estrategista de conteúdo | `.claude/agents/estrategista-conteudo.md` | `01-calendario.md` (em `/conteudo`) |
-| Editor de vídeo IA | `.claude/agents/editor-video-ia.md` | `08-video.md` + vídeos em `midia/` |
+| Setor | Funções | Agente | Entrega |
+|---|---|---|---|
+| Diretoria | Head de Marketing | sessão principal | `00-brief.md`, `README.md` |
+| Inteligência | Especialistas de produto | `especialista-*` | `01-produto.md` |
+| | Dados e CRM | `analista-dados-crm` | `02-dados.md` |
+| | Mídia Paga | `estrategista-midia-paga` | `03-midia.md` |
+| Criação | Copywriter | `copywriter` | `04-copy.md` |
+| | Designer e Web | `designer` | `05-criativo.md` + `web/` (LP e e-mails HTML) |
+| Estúdio de Conteúdo | Social media | `estrategista-conteudo` | `01-calendario.md` (em `/conteudo`) |
+| | Editor de vídeo IA | `editor-video-ia` | `08-video.md` + vídeos em `midia/` |
+| | Parcerias e Influenciadores | `parcerias-influenciadores` | `10-influencia.md` |
+| Controle | Compliance | `compliance` | `06-compliance.md` |
+| | QA de entrega | `qa-entrega` | `09-qa.md` |
+| Memória | Base de conhecimento | `conhecimento/` | produto, público, tom de voz, conteúdo, influenciadores, histórico |
+
+Cada agente tem um **padrão sênior** no próprio arquivo: o repertório que usa e a lista que confere
+antes de entregar.
 
 ## Onde ficam as coisas
 
 - `entregas/STATUS.md` — quadro de todas as campanhas e o status de cada uma.
 - `entregas/AAAA-MM-DD-<campanha>/README.md` — resumo executivo + o que precisa do seu OK.
 - `conhecimento/` — a memória do time. Quanto mais completa, melhores as campanhas.
-- `modelos/brief.md` — modelo de brief usado pelo orquestrador.
+- `modelos/brief.md` — modelo de brief usado pelo Head de Marketing.
 
 ## Como o time fica mais inteligente
 
 1. Os arquivos de conhecimento têm marcas `[VALIDAR]` onde a informação pública era incerta.
-   Sempre que você responder uma dúvida ou corrigir algo, o orquestrador atualiza o arquivo.
+   Sempre que você responder uma dúvida ou corrigir algo, o Head de Marketing atualiza o arquivo.
 2. Depois de veicular, mande os resultados (`/resultado-campanha`). Eles entram no
    `historico.md` e os agentes passam a usar esses aprendizados.
 

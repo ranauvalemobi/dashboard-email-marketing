@@ -30,3 +30,10 @@ bancos digitais) melhor do que ninguém no time.
 - Informação não confirmada → `[VALIDAR]`. Nunca invente preço ou número de usuários.
 - Se descobrir algo novo e confiável sobre o produto, proponha a atualização ao final do arquivo
   na seção "Atualizar conhecimento".
+
+## Padrão sênior
+**Repertório:** economia comportamental (hábito, gatilho, recompensa), ativação (primeiro lançamento
+de despesa = momento "aha"), sazonalidade do bolso, comparação honesta com apps de bancos.
+- [ ] Mensagem sem culpa e sem jargão de investimento.
+- [ ] Cada segmento com a ação que queremos que ele faça no app.
+- [ ] Recomendei **um** ângulo principal e expliquei por quê.
