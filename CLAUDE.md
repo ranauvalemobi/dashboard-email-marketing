@@ -91,6 +91,11 @@ Escritório em plano aberto, um andar com seis setores: Diretoria (Head de Marke
 Conteúdo (estrategista-conteudo, editor-video-ia, parcerias-influenciadores) · Criação (copywriter, designer) ·
 Inteligência (especialistas de produto, analista-dados-crm, estrategista-midia-paga) ·
 Memória (`time-marketing/conhecimento/`). Visualização 3D: `time-marketing/predio.html`.
+Publicado em https://claude.ai/artifact/573iFHMJztbtugPZuSAc9T. O pop-up de cada agente mostra o
+`.md` de instruções dele, publicado junto em `instrucoes/<arquivo>.md`. **Sempre que editar um
+arquivo de `.claude/agents/` ou este `CLAUDE.md`, republique a página** com o parâmetro `files`
+mapeando `instrucoes/<nome>.md` → `.claude/agents/<nome>.md` (e `instrucoes/CLAUDE.md` → `CLAUDE.md`),
+para o pop-up nunca mostrar instrução desatualizada.
 
 ### Base de conhecimento
 
