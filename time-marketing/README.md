@@ -74,7 +74,7 @@ Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o
 
 ## Ver os agentes trabalhando (visual de escritório)
 
-**Planta do prédio:** `predio.html` (publicada em https://claude.ai/artifact/573iFHMJztbtugPZuSAc9T) — vista 3D diagonal ou de cima, com os agentes por andar e a reprodução da campanha de teste. Cores do Valemobi Design System.
+**Escritório 3D:** `predio.html` (publicado em https://claude.ai/artifact/573iFHMJztbtugPZuSAc9T) — um andar em plano aberto com seis setores, personagens e decoração em 3D, vista diagonal ou de cima, e a reprodução da campanha de teste. Cores do Valemobi Design System.
 
 O time roda como subagentes do Claude Code, então qualquer visualizador de agentes do Claude Code
 funciona sem mudar nada aqui. Recomendado: **[Pixel Agents](https://github.com/pablodelucca/pixel-agents)**

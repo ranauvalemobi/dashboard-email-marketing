@@ -61,10 +61,10 @@ Subagentes não chamam outros subagentes: a orquestração é sempre sua.
 - Publicar em redes sociais (TikTok, Meta, YouTube) só com OK explícito.
 
 ### Mapa do prédio
-5º Diretoria (orquestrador) · 4º Controle (compliance) · 3º Estúdio de Conteúdo
-(estrategista-conteudo, editor-video-ia) · 2º Criação (redator, diretor-criativo) ·
-1º Inteligência (especialistas de produto, analista-dados-crm, estrategista-midia-paga) ·
-Subsolo Memória (`time-marketing/conhecimento/`). Visualização: `time-marketing/predio.html`.
+Escritório em plano aberto, um andar com seis setores: Diretoria (orquestrador) · Compliance · Estúdio de Conteúdo
+(estrategista-conteudo, editor-video-ia) · Criação (redator, diretor-criativo) ·
+Inteligência (especialistas de produto, analista-dados-crm, estrategista-midia-paga) ·
+Memória (`time-marketing/conhecimento/`). Visualização 3D: `time-marketing/predio.html`.
 
 ### Base de conhecimento
 
