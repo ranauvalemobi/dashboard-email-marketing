@@ -93,14 +93,16 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .compact .lbl:not([data-st="working"]):not([data-st="waiting"]):not(.sel) .tag { display: none; }
 .compact .bubble { display: none !important; }
 .compact .sec b { font-size: 10px; }
-.sec { pointer-events: auto; cursor: pointer; border: 0; background: none; padding: 0; text-align: left; transform: translate(0, -100%); }
+.sec { pointer-events: auto; cursor: pointer; border: 0; background: none; padding: 0; text-align: left; transform: translate(-50%, calc(-100% - 4px)); }
+.lbl.out-front .sec { transform: translate(-50%, 6px); }
+.sec span.live { color: var(--accent); }
 .sec { display: flex; flex-direction: column; gap: 1px; padding: 4px 9px 5px; border-radius: 8px; background: color-mix(in srgb, var(--surface) 86%, transparent);
   border: 1px solid var(--line-2); backdrop-filter: blur(4px); }
 .sec b { display: block; font: 700 11.5px var(--f-display); letter-spacing: .09em; text-transform: uppercase; color: var(--fg); white-space: nowrap; }
 .sec span { display: block; font: 500 10.5px var(--f-mono); color: var(--muted); white-space: nowrap; }
 .sec i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; background: var(--c); margin-right: 6px; vertical-align: 1px; }
-.stage-meta { position: absolute; left: 14px; bottom: 12px; font: 500 11px var(--f-mono); color: var(--muted); letter-spacing: .04em; pointer-events: none; }
-.hint { position: absolute; right: 14px; bottom: 12px; font: 500 11px var(--f-mono); color: var(--muted); pointer-events: none; text-align: right; }
+.stage-meta { position: absolute; left: 14px; top: 12px; font: 500 11px var(--f-mono); color: var(--muted); letter-spacing: .04em; pointer-events: none; }
+.hint { position: absolute; right: 14px; top: 12px; font: 500 11px var(--f-mono); color: var(--muted); pointer-events: none; text-align: right; }
 .fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--muted); }
 
 aside { display: grid; gap: 12px; min-width: 0; }
@@ -278,6 +280,11 @@ dl.kv code { font: 500 12px var(--f-mono); }
     $("#log").innerHTML = state.log.slice().reverse().map(([c, t]) => `<li><time>T+${c}</time><span>${t}</span></li>`).join("");
     const live = new Set(AGENTS.filter((a) => (state.st[a.id] || [])[0] === "working").map((a) => a.sector));
     nav.querySelectorAll(".chip").forEach((b) => b.classList.toggle("has-live", live.has(b.dataset.s)));
+    document.querySelectorAll(".sec[data-s]").forEach((b) => {
+      const ag = AGENTS.filter((a) => a.sector === b.dataset.s), n = (k) => ag.filter((a) => (state.st[a.id] || ["idle"])[0] === k).length;
+      const parts = [n("working") && `${n("working")} trabalhando`, n("waiting") && "aguardando seu OK", n("done") && `${n("done")} entregue${n("done") > 1 ? "s" : ""}`].filter(Boolean);
+      const sp = $("span", b); sp.textContent = parts.length ? parts.join(" · ") : b.dataset.sub; sp.classList.toggle("live", n("working") > 0 || n("waiting") > 0);
+    });
     renderDetail();
   }
 
@@ -600,9 +607,16 @@ dl.kv code { font: 500 12px var(--f-mono); }
   const labels = [];
   SECTORS.forEach((s) => {
     const el = document.createElement("div"); el.className = "lbl";
-    el.innerHTML = `<button type="button" class="sec" style="--c:var(${s.c})"><b><i></i>${s.name}</b><span>${s.sub}</span></button>`;
+    el.innerHTML = `<button type="button" class="sec" data-s="${s.id}" data-sub="${s.sub}" style="--c:var(${s.c})"><b><i></i>${s.name}</b><span>${s.sub}</span></button>`;
     $("button", el).addEventListener("click", () => focusSector(s.id, true));
-    overlay.appendChild(el); labels.push({ el, pos: new THREE.Vector3(s.x0 + 0.6, 0.05, s.z1 - 0.6) });
+    // card sits outside the exterior: above the back wall, or past the front edge of the floor
+    const back = s.z0 === -16, cx = (s.x0 + s.x1) / 2, w = s.x1 - s.x0 - 0.8;
+    el.classList.add(back ? "out-back" : "out-front");
+    const strip = new THREE.MeshBasicMaterial({ color: 0xffffff }); themed.push({ basic: strip, tintVar: s.c });
+    if (back) box(w, 0.14, 0.34, strip, cx, 3.27, -16.15).castShadow = false;
+    if (back) { const post = box(0.05, 2.7, 0.05, strip, cx, 4.65, -16.7); post.castShadow = false; post.rotation.x = -0.35; }
+    else box(w, 0.32, 0.06, strip, cx, -0.2, 16.54).castShadow = false;
+    overlay.appendChild(el); labels.push({ el, pos: back ? new THREE.Vector3(cx, 6.2, -17.2) : new THREE.Vector3(cx, -0.45, 16.6) });
   });
   const agentLbl = {};
   AGENTS.forEach((a) => {
@@ -638,7 +652,7 @@ dl.kv code { font: 500 12px var(--f-mono); }
   let tween = null;
   const sph = new THREE.Spherical();
   function boundsOf(id) {
-    if (!id) return { x0: -23.5, x1: 23.5, z0: -16.5, z1: 16.5 };
+    if (!id) return { x0: -23.5, x1: 23.5, z0: -19.5, z1: 18.5 };
     const s = SECTORS.find((x) => x.id === id); return { x0: s.x0, x1: s.x1, z0: s.z0, z1: s.z1 };
   }
   function fit(b, phi, theta) {
