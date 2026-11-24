@@ -12,7 +12,7 @@ description: Transforma um vídeo bruto (live, gravação, webinar, tela do app)
 3. **`editor-video-ia`**: decupagem → plano de edição → cortes locais com ffmpeg (sem custo).
    Se o plano usar geração/edição paga, ele devolve o orçamento: peça o OK ao usuário antes de
    continuar.
-4. **`redator`** (em paralelo com o passo 3 quando a decupagem estiver pronta): títulos, legendas
+4. **`copywriter`** (em paralelo com o passo 3 quando a decupagem estiver pronta): títulos, legendas
    de post e textos na tela de cada corte.
 5. **`compliance`** revisa textos na tela, legendas e avisos.
 6. Envie os cortes ao usuário com SendUserFile (status normal), commit da documentação, e peça o

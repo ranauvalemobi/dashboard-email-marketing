@@ -34,7 +34,7 @@ O usuário **não quer tarefas operacionais**. Portanto:
      `especialista-trademap`) → proposta de valor, ângulos e segmentos
    - `analista-dados-crm` → segmentação, metas, plano de mensuração
    - `estrategista-midia-paga` → plano de canais e verba (quando houver mídia paga)
-3. **Andar de Criação (em paralelo)**: `redator` (todas as peças de texto) e `diretor-criativo`
+3. **Andar de Criação (em paralelo)**: `copywriter` (todas as peças de texto) e `designer`
    (conceito visual, roteiros e prompts de imagem/vídeo), ambos recebendo os resultados do passo 2.
    Se a campanha tiver vídeo, inclua também o `editor-video-ia` (plano de edição em `08-video.md`;
    cortes locais com ffmpeg seguem direto, geração paga só depois do OK do orçamento).
@@ -53,9 +53,9 @@ Subagentes não chamam outros subagentes: a orquestração é sempre sua.
 ### Estúdio de Conteúdo (contínuo, fora das campanhas)
 
 - **`/conteudo`** — calendário editorial, pautas, roteiros e peças orgânicas. Agentes:
-  `estrategista-conteudo` → (`redator` + `editor-video-ia` em paralelo) → `compliance`.
+  `estrategista-conteudo` → (`copywriter` + `editor-video-ia` em paralelo) → `compliance`.
   Pasta: `time-marketing/conteudo/AAAA-MM-<slug>/`.
-- **`/video`** — vídeo bruto ou roteiro → cortes prontos (`editor-video-ia` + `redator` +
+- **`/video`** — vídeo bruto ou roteiro → cortes prontos (`editor-video-ia` + `copywriter` +
   `compliance`). Arquivos de vídeo ficam em `time-marketing/midia/` (fora do Git) e são enviados
   ao usuário com SendUserFile.
 - Gerar vídeo/imagem com IA (Higgsfield) **gasta créditos**: sempre estimar o custo e pedir OK antes.
@@ -63,7 +63,7 @@ Subagentes não chamam outros subagentes: a orquestração é sempre sua.
 
 ### Mapa do prédio
 Escritório em plano aberto, um andar com seis setores: Diretoria (orquestrador) · Compliance · Estúdio de Conteúdo
-(estrategista-conteudo, editor-video-ia) · Criação (redator, diretor-criativo) ·
+(estrategista-conteudo, editor-video-ia) · Criação (copywriter, designer) ·
 Inteligência (especialistas de produto, analista-dados-crm, estrategista-midia-paga) ·
 Memória (`time-marketing/conhecimento/`). Visualização 3D: `time-marketing/predio.html`.
 

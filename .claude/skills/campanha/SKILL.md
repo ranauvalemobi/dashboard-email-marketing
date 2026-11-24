@@ -16,7 +16,7 @@ Siga o fluxo do `CLAUDE.md` sem fazer perguntas ao usuário:
 2. **Inteligência (paralelo, uma única mensagem)** — chame o especialista do produto,
    `analista-dados-crm` e `estrategista-midia-paga`. Em cada prompt informe: caminho do brief,
    caminho da pasta, arquivo de saída esperado, produto.
-3. **Criação (paralelo, uma única mensagem)** — `redator` e `diretor-criativo`, apontando os
+3. **Criação (paralelo, uma única mensagem)** — `copywriter` e `designer`, apontando os
    arquivos gerados no passo 2.
 4. **Compliance** — `compliance`. Se ❌ ou houver apontamento de severidade alta, aplique as
    correções sugeridas no `04-copy.md`/`05-criativo.md` (ou devolva ao agente) e rode o compliance

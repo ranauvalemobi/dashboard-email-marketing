@@ -34,7 +34,7 @@ Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o
 │   estrategista-conteudo · editor-video-ia                    │
 ├──────────────────────────────────────────────────────────────┤
 │ 2º ANDAR · CRIAÇÃO                         (em paralelo)     │
-│   redator · diretor-criativo                                 │
+│   copywriter · designer                                      │
 ├──────────────────────────────────────────────────────────────┤
 │ 1º ANDAR · INTELIGÊNCIA                    (em paralelo)     │
 │   especialista-minhas-economias · especialista-rocket-trader │
@@ -52,8 +52,8 @@ Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o
 | Especialista do produto | `.claude/agents/especialista-*.md` | `01-produto.md` |
 | Analista de dados & CRM | `.claude/agents/analista-dados-crm.md` | `02-dados.md` |
 | Estrategista de mídia | `.claude/agents/estrategista-midia-paga.md` | `03-midia.md` |
-| Redator | `.claude/agents/redator.md` | `04-copy.md` |
-| Diretor criativo | `.claude/agents/diretor-criativo.md` | `05-criativo.md` |
+| Copywriter | `.claude/agents/copywriter.md` | `04-copy.md` |
+| Designer | `.claude/agents/designer.md` | `05-criativo.md` |
 | Compliance | `.claude/agents/compliance.md` | `06-compliance.md` |
 | Estrategista de conteúdo | `.claude/agents/estrategista-conteudo.md` | `01-calendario.md` (em `/conteudo`) |
 | Editor de vídeo IA | `.claude/agents/editor-video-ia.md` | `08-video.md` + vídeos em `midia/` |
