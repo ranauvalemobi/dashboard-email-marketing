@@ -19,7 +19,7 @@
 ## Monetização
 - Gratuito com compras dentro do app; versão gratuita com anúncios.
 - Versão premium/sem anúncios — fonte antiga cita R$ 8,50/mês `[VALIDAR: preço e benefícios atuais]`.
-- Conversão de compras acompanhada pelo dashboard Wake + Compras deste repositório.
+- Conversão de compras acompanhada pelo backoffice (CRM interno) `[VALIDAR: relatórios disponíveis]`.
 
 ## Concorrentes
 Mobills, Organizze, Olivia, GuiaBolso (descontinuado), apps de bancos digitais (Nubank, Inter,

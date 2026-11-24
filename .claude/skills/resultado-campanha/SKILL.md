@@ -1,6 +1,6 @@
 ---
 name: resultado-campanha
-description: Registra e analisa o resultado de uma campanha já veiculada e alimenta a memória do time (historico.md do produto). Use quando o usuário enviar números, prints, planilhas da Wake/compras ou disser como uma campanha performou.
+description: Registra e analisa o resultado de uma campanha já veiculada e alimenta a memória do time (historico.md do produto). Use quando o usuário enviar números, prints, exportações do backoffice (CRM interno) ou disser como uma campanha performou.
 ---
 
 # /resultado-campanha — fazer o time aprender

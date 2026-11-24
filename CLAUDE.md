@@ -2,7 +2,8 @@
 
 Este repositório abriga dois projetos:
 
-1. `dashboard_final_v1.py` — dashboard Streamlit de conversão de e-mail marketing (Wake + Compras).
+1. `dashboard_final_v1.py` — dashboard Streamlit de conversão de e-mail marketing (**legado**: lia
+   exportações da Wake, que não é mais usada; o CRM agora é o backoffice interno).
 2. `time-marketing/` — o **Time de Marketing IA**: agentes especialistas que criam campanhas para
    **Minhas Economias**, **RocketTrader** e **TradeMap**.
 

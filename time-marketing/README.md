@@ -12,7 +12,7 @@ Abra uma sessão do Claude Code neste repositório e escreva, por exemplo:
 /campanha Black Friday do TradeMap, foco em converter free para o plano anual
 /campanha reativar usuários inativos do Minhas Economias em dezembro
 /campanha divulgar a liga de dezembro da Rocket com a SmartProp
-/resultado-campanha (anexe a planilha da Wake ou cole os números)
+/resultado-campanha (anexe a exportação do backoffice ou cole os números)
 /conteudo calendário de dezembro dos três produtos
 /video transformar a live da liga de ontem em 5 cortes verticais
 ```

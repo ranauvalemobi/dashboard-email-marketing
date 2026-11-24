@@ -12,10 +12,14 @@
   bases são uma alavanca a explorar `[VALIDAR: regras internas de uso cruzado de base e consentimento]`.
 
 ## Ferramentas de marketing conhecidas
-- **Wake** — disparo de e-mail (exporta quem abriu).
-- Dashboard de conversão de e-mail: `dashboard_final_v1.py` (Streamlit).
+- **CRM: backoffice** — sistema interno da Valemobi, construído na AWS, com telas próprias. É onde
+  ficam a base de clientes e os disparos de comunicação.
+  `[VALIDAR: quais canais o backoffice dispara (e-mail, push, in-app, SMS?), formato aceito para
+  peças (HTML de e-mail?), como se cria segmento e como se exportam resultados]`
+- **Wake** — CRM anterior, **não é mais usado** (informado em 24/11/2026). O dashboard
+  `dashboard_final_v1.py` deste repositório foi feito para as exportações da Wake e é legado.
 - **Meta Ads** — mídia paga `[VALIDAR: conta conectada ao Claude]`.
-- `[VALIDAR: ferramenta de push/in-app, CRM, analytics (Amplitude? GA4?)]`
+- `[VALIDAR: ferramenta de push/in-app (se não for o backoffice), analytics (Amplitude? GA4?)]`
 
 ## Fontes
 - https://apps.apple.com/us/app/rockettrader-a%C3%A7%C3%B5es-e-trading/id6477620111
