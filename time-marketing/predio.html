@@ -18,7 +18,7 @@
   --fg: #F2F4F8; --muted: #8F8F9A; --line: rgba(242,244,248,.10); --line-2: rgba(242,244,248,.18);
   --accent: #01E59B; --on-accent: #13141B; --wait: #F5B700;
   --a-orq: #F2F4F8; --a-tm: #01E59B; --a-rt: #1DA1F2; --a-me: #7BF6CF; --a-dados: #00EEFF;
-  --a-midia: #F96500; --a-redator: #5999F8; --a-criativo: #E53F71; --a-compliance: #F50040;
+  --a-midia: #F96500; --a-redator: #5999F8; --a-criativo: #E53F71; --a-compliance: #F50040; --a-conteudo: #ACDFFF; --a-video: #F5B700;
   --skin: #E8D3BE; --grid: rgba(242,244,248,.035);
   --f-display: "Montserrat", "Metropolis", "Segoe UI", system-ui, sans-serif;
   --f-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
@@ -31,7 +31,7 @@
     --fg: #13141B; --muted: #5E5E6B; --line: rgba(19,20,27,.10); --line-2: rgba(19,20,27,.20);
     --accent: #00B278; --on-accent: #FFFFFF; --wait: #A86B00;
     --a-orq: #353546; --a-tm: #00B278; --a-rt: #1A86CF; --a-me: #029D60; --a-dados: #0056FF;
-    --a-midia: #D35400; --a-redator: #143B89; --a-criativo: #C42D5B; --a-compliance: #D10036;
+    --a-midia: #D35400; --a-redator: #143B89; --a-criativo: #C42D5B; --a-compliance: #D10036; --a-conteudo: #1A86CF; --a-video: #A86B00;
     --skin: #D9B99B; --grid: rgba(19,20,27,.045);
   }
 }
@@ -41,7 +41,7 @@
   --fg: #13141B; --muted: #5E5E6B; --line: rgba(19,20,27,.10); --line-2: rgba(19,20,27,.20);
   --accent: #00B278; --on-accent: #FFFFFF; --wait: #A86B00;
   --a-orq: #353546; --a-tm: #00B278; --a-rt: #1A86CF; --a-me: #029D60; --a-dados: #0056FF;
-  --a-midia: #D35400; --a-redator: #143B89; --a-criativo: #C42D5B; --a-compliance: #D10036;
+  --a-midia: #D35400; --a-redator: #143B89; --a-criativo: #C42D5B; --a-compliance: #D10036; --a-conteudo: #1A86CF; --a-video: #A86B00;
   --skin: #D9B99B; --grid: rgba(19,20,27,.045);
 }
 
@@ -130,6 +130,13 @@ header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: 
 .shelf .books { display: flex; gap: 3px; align-items: flex-end; height: 30px; }
 .shelf .books span { width: 9px; border-radius: 2px 2px 0 0; background: var(--tint); opacity: .85; }
 .shelf .meta { margin-top: 6px; font: 500 10px var(--f-mono); color: var(--muted); }
+.cal { position: absolute; left: 12px; right: 12px; top: 30px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal b { font: 600 9.5px var(--f-mono); color: var(--muted); text-align: center; }
+.cal i { height: 16px; border-radius: 3px; background: var(--surface); border: 1px solid var(--line-2); }
+.cal i.on { background: color-mix(in srgb, var(--a-conteudo) 45%, var(--surface)); }
+.tracks { position: absolute; left: 12px; right: 12px; top: 32px; display: grid; gap: 5px; }
+.tracks span { display: block; height: 12px; border-radius: 3px; background: var(--surface); border: 1px solid var(--line-2); position: relative; }
+.tracks span::after { content: ""; position: absolute; top: 1px; bottom: 1px; left: var(--l); width: var(--w); border-radius: 2px; background: color-mix(in srgb, var(--a-video) 55%, transparent); }
 .rules { position: absolute; left: 10px; right: 10px; top: 30px; display: grid; gap: 5px; }
 .rules span { font: 500 10.5px var(--f-mono); padding: 3px 7px; border-left: 3px solid var(--a-compliance); background: var(--surface); }
 
@@ -141,9 +148,9 @@ header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: 
 .agent .ring { position: absolute; left: -24px; bottom: -10px; width: 48px; height: 18px; border-radius: 50%; border: 2px solid transparent; }
 .agent .head { position: absolute; left: 9px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--skin); box-shadow: inset 0 -3px 0 rgba(0,0,0,.12); }
 .agent .body { position: absolute; left: 3px; top: 18px; width: 28px; height: 30px; border-radius: 12px 12px 6px 6px; background: var(--c); box-shadow: inset -5px 0 0 rgba(0,0,0,.14); }
-.agent .tag { position: absolute; left: 0; top: 12px; transform: translateX(-50%); white-space: nowrap; font: 600 11px var(--f-body); padding: 2px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line-2); display: flex; gap: 6px; align-items: center; }
+.agent .tag { position: absolute; left: 0; bottom: 56px; transform: translateX(-50%); white-space: nowrap; font: 600 11px var(--f-body); padding: 2px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line-2); display: flex; gap: 6px; align-items: center; }
 .agent .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
-.agent .bubble { position: absolute; left: 0; bottom: 60px; transform: translateX(-50%); white-space: nowrap; font: 600 11px var(--f-body);
+.agent .bubble { position: absolute; left: 0; bottom: 88px; transform: translateX(-50%); white-space: nowrap; font: 600 11px var(--f-body);
   padding: 5px 9px; border-radius: 8px; background: var(--fg); color: var(--bg); opacity: 0; transition: opacity .3s; pointer-events: none; }
 .agent .bubble::after { content: ""; position: absolute; left: 50%; bottom: -5px; margin-left: -5px; border: 5px solid transparent; border-bottom: 0; border-top-color: var(--fg); }
 .agent .badge { position: absolute; left: 10px; top: -6px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font: 700 11px/18px var(--f-body); text-align: center; opacity: 0; transform: scale(.6); transition: opacity .3s, transform .3s; }
@@ -160,7 +167,7 @@ header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: 
 .agent[data-st="waiting"] .bubble { background: var(--wait); color: #13141B; }
 .agent[data-st="waiting"] .bubble::after { border-top-color: var(--wait); }
 .agent.sel .tag { border-color: var(--fg); box-shadow: 0 0 0 2px color-mix(in srgb, var(--fg) 25%, transparent); }
-.plan .agent .bubble { bottom: 58px; }
+.agent .bb { transform: rotateZ(calc(-1 * var(--rz))) rotateX(calc(-1 * var(--rx))) translateZ(2px); }
 
 @keyframes pulse { 50% { opacity: .35; } }
 @keyframes ring { 50% { transform: scale(1.18); opacity: .5; } }
@@ -211,7 +218,7 @@ dl.kv code { font: 500 12px var(--f-mono); }
   <header class="top">
     <div class="brand">
       <h1>Prédio do Time de Marketing IA</h1>
-      <p>Valemobi · Minhas Economias, RocketTrader e TradeMap. Reprodução da campanha de teste (Black Friday TradeMap) passando pelos andares.</p>
+      <p>Valemobi · Minhas Economias, RocketTrader e TradeMap. Seis andares, onze agentes. Reprodução da campanha de teste (Black Friday TradeMap) passando pelos andares.</p>
     </div>
     <div class="controls">
       <div class="seg" role="group" aria-label="Vista">
@@ -235,11 +242,11 @@ dl.kv code { font: 500 12px var(--f-mono); }
       <section class="card">
         <p class="eyebrow">Fluxo da campanha</p>
         <ol class="steps" id="steps">
-          <li data-p="brief">Brief <small>4º andar</small></li>
+          <li data-p="brief">Brief <small>5º andar</small></li>
           <li data-p="intel">Inteligência <small>1º andar</small></li>
           <li data-p="cria">Criação <small>2º andar</small></li>
-          <li data-p="ctrl">Controle <small>3º andar</small></li>
-          <li data-p="entrega">Entrega e seu OK <small>4º andar</small></li>
+          <li data-p="ctrl">Controle <small>4º andar</small></li>
+          <li data-p="entrega">Entrega e seu OK <small>5º andar</small></li>
         </ol>
       </section>
 
@@ -268,8 +275,9 @@ dl.kv code { font: 500 12px var(--f-mono); }
   const W = 560, D = 340, GAP = 150, LIFT = 330;
 
   const FLOORS = [
-    { id: "f4", level: "4º andar", name: "Diretoria" },
-    { id: "f3", level: "3º andar", name: "Controle" },
+    { id: "f4", level: "5º andar", name: "Diretoria" },
+    { id: "f3", level: "4º andar", name: "Controle" },
+    { id: "fc", level: "3º andar", name: "Estúdio de Conteúdo" },
     { id: "f2", level: "2º andar", name: "Criação" },
     { id: "f1", level: "1º andar", name: "Inteligência" },
     { id: "b1", level: "Subsolo", name: "Memória" },
@@ -284,6 +292,10 @@ dl.kv code { font: 500 12px var(--f-mono); }
     f3: [
       { x: 16, y: 16, w: 340, h: 308, label: "Revisão de compliance", tint: "--a-compliance" },
       { x: 372, y: 16, w: 172, h: 308, label: "Regras", id: "rules" },
+    ],
+    fc: [
+      { x: 16, y: 16, w: 256, h: 308, label: "Sala de pauta", tint: "--a-conteudo", id: "pauta" },
+      { x: 288, y: 16, w: 256, h: 308, label: "Ilha de edição de vídeo", tint: "--a-video", id: "ilha" },
     ],
     f2: [
       { x: 16, y: 16, w: 256, h: 308, label: "Redação", tint: "--a-redator" },
@@ -314,6 +326,12 @@ dl.kv code { font: 500 12px var(--f-mono); }
     { id: "compliance", name: "Compliance", initials: "CP", role: "CVM, CONAR, LGPD, SPA/MF e marca", floor: "f3", x: 186, y: 210, c: "--a-compliance",
       file: "06-compliance.md", def: ".claude/agents/compliance.md",
       summary: "Aprovado com ajustes: 1 apontamento alto (corrigido), 8 médios, 6 baixos. Listou 10 pendências que bloqueiam as peças com oferta." },
+    { id: "conteudo", name: "Conteúdo", initials: "CT", role: "Calendário editorial e pautas", floor: "fc", x: 144, y: 250, c: "--a-conteudo",
+      file: "01-calendario.md (em /conteudo)", def: ".claude/agents/estrategista-conteudo.md",
+      summary: "Sem tarefa na campanha de teste. Cuida do conteúdo contínuo dos três produtos: pilares, calendário, pautas, roteiros e reaproveitamento de lives e artigos." },
+    { id: "video", name: "Editor de vídeo IA", initials: "EV", role: "Cortes, legendas e vídeo com IA", floor: "fc", x: 416, y: 250, c: "--a-video",
+      file: "08-video.md + cortes .mp4", def: ".claude/agents/editor-video-ia.md",
+      summary: "Sem tarefa na campanha de teste. Transforma lives e gravações em cortes 9:16 com legenda (ffmpeg) e gera cenas com IA (Higgsfield), sempre com orçamento aprovado antes." },
     { id: "redator", name: "Redator", initials: "RD", role: "Copy multicanal", floor: "f2", x: 144, y: 210, c: "--a-redator",
       file: "04-copy.md", def: ".claude/agents/redator.md",
       summary: "59 peças: 7 e-mails, 8 pushes, 4 in-app, 18 anúncios Meta, posts, stories e landing page. 191 limites de caracteres conferidos." },
@@ -384,6 +402,8 @@ dl.kv code { font: 500 12px var(--f-mono); }
       d.innerHTML = `<span class="rl">${r.label}</span>`;
       if (r.id === "tray") d.insertAdjacentHTML("beforeend", `<div class="files" id="tray"></div>`);
       if (r.id === "board") d.insertAdjacentHTML("beforeend", `<div class="board" id="board"></div>`);
+      if (r.id === "pauta") d.insertAdjacentHTML("beforeend", `<div class="cal">${["S","T","Q","Q","S","S","D"].map((x) => `<b>${x}</b>`).join("")}${Array.from({ length: 14 }, (_, i) => `<i class="${[1, 3, 4, 8, 10, 12].includes(i) ? "on" : ""}"></i>`).join("")}</div>`);
+      if (r.id === "ilha") d.insertAdjacentHTML("beforeend", `<div class="tracks"><span style="--w:62%;--l:4%"></span><span style="--w:30%;--l:20%"></span><span style="--w:78%;--l:10%"></span></div>`);
       if (r.id === "rules") d.insertAdjacentHTML("beforeend", `<div class="rules">${["CVM", "CONAR", "LGPD", "SPA/MF (ligas)", "Política Meta Ads", "Tom de voz"].map((t) => `<span>${t}</span>`).join("")}</div>`);
       plate.appendChild(d);
     });
@@ -493,6 +513,8 @@ dl.kv code { font: 500 12px var(--f-mono); }
     $("#stageMeta").textContent = `${iso ? "VISTA 3D" : "PLANTA"} · ${f ? `${f.level.toUpperCase()} · ${f.name.toUpperCase()}` : "PRÉDIO INTEIRO"}`;
     nav.querySelectorAll(".chip").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.f || null) === state.focus)));
   }
+
+  function select(id) { state.selected = id; renderAgents(); }
 
   function setFocus(id, manual) {
     state.focus = id;

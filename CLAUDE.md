@@ -35,6 +35,8 @@ O usuário **não quer tarefas operacionais**. Portanto:
    - `estrategista-midia-paga` → plano de canais e verba (quando houver mídia paga)
 3. **Andar de Criação (em paralelo)**: `redator` (todas as peças de texto) e `diretor-criativo`
    (conceito visual, roteiros e prompts de imagem/vídeo), ambos recebendo os resultados do passo 2.
+   Se a campanha tiver vídeo, inclua também o `editor-video-ia` (plano de edição em `08-video.md`;
+   cortes locais com ffmpeg seguem direto, geração paga só depois do OK do orçamento).
 4. **Andar de Controle**: `compliance` revisa tudo. Se reprovar algo, devolva para o agente
    responsável corrigir (no máximo 2 rodadas) e reenvie ao compliance.
 5. **Consolidação**: escreva `README.md` na pasta da entrega (resumo executivo de 1 página +
@@ -46,6 +48,23 @@ Cada agente salva o próprio arquivo na pasta da entrega (`01-produto.md`, `02-d
 pasta e do brief no prompt do agente — ele não vê esta conversa.
 
 Subagentes não chamam outros subagentes: a orquestração é sempre sua.
+
+### Estúdio de Conteúdo (contínuo, fora das campanhas)
+
+- **`/conteudo`** — calendário editorial, pautas, roteiros e peças orgânicas. Agentes:
+  `estrategista-conteudo` → (`redator` + `editor-video-ia` em paralelo) → `compliance`.
+  Pasta: `time-marketing/conteudo/AAAA-MM-<slug>/`.
+- **`/video`** — vídeo bruto ou roteiro → cortes prontos (`editor-video-ia` + `redator` +
+  `compliance`). Arquivos de vídeo ficam em `time-marketing/midia/` (fora do Git) e são enviados
+  ao usuário com SendUserFile.
+- Gerar vídeo/imagem com IA (Higgsfield) **gasta créditos**: sempre estimar o custo e pedir OK antes.
+- Publicar em redes sociais (TikTok, Meta, YouTube) só com OK explícito.
+
+### Mapa do prédio
+5º Diretoria (orquestrador) · 4º Controle (compliance) · 3º Estúdio de Conteúdo
+(estrategista-conteudo, editor-video-ia) · 2º Criação (redator, diretor-criativo) ·
+1º Inteligência (especialistas de produto, analista-dados-crm, estrategista-midia-paga) ·
+Subsolo Memória (`time-marketing/conhecimento/`). Visualização: `time-marketing/predio.html`.
 
 ### Base de conhecimento
 

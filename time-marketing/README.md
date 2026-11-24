@@ -13,6 +13,8 @@ Abra uma sessão do Claude Code neste repositório e escreva, por exemplo:
 /campanha reativar usuários inativos do Minhas Economias em dezembro
 /campanha divulgar a liga de dezembro da Rocket com a SmartProp
 /resultado-campanha (anexe a planilha da Wake ou cole os números)
+/conteudo calendário de dezembro dos três produtos
+/video transformar a live da liga de ontem em 5 cortes verticais
 ```
 
 Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o time.
@@ -21,12 +23,15 @@ Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│ 4º ANDAR · DIRETORIA                                         │
+│ 5º ANDAR · DIRETORIA                                         │
 │   Orquestrador (sessão principal) — brief, distribuição,     │
 │   consolidação, pede o seu OK                                │
 ├──────────────────────────────────────────────────────────────┤
-│ 3º ANDAR · CONTROLE                                          │
+│ 4º ANDAR · CONTROLE                                          │
 │   compliance — CVM, CONAR, LGPD, SPA/MF, marca               │
+├──────────────────────────────────────────────────────────────┤
+│ 3º ANDAR · ESTÚDIO DE CONTEÚDO             (contínuo)        │
+│   estrategista-conteudo · editor-video-ia                    │
 ├──────────────────────────────────────────────────────────────┤
 │ 2º ANDAR · CRIAÇÃO                         (em paralelo)     │
 │   redator · diretor-criativo                                 │
@@ -37,7 +42,8 @@ Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o
 │   estrategista-midia-paga                                    │
 ├──────────────────────────────────────────────────────────────┤
 │ SUBSOLO · MEMÓRIA                                            │
-│   conhecimento/ (produto, público, tom de voz, histórico)    │
+│   conhecimento/ (produto, público, tom de voz, conteúdo,     │
+│   padrões de vídeo, histórico)                               │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -49,6 +55,8 @@ Ou simplesmente peça em linguagem natural — o orquestrador entende e aciona o
 | Redator | `.claude/agents/redator.md` | `04-copy.md` |
 | Diretor criativo | `.claude/agents/diretor-criativo.md` | `05-criativo.md` |
 | Compliance | `.claude/agents/compliance.md` | `06-compliance.md` |
+| Estrategista de conteúdo | `.claude/agents/estrategista-conteudo.md` | `01-calendario.md` (em `/conteudo`) |
+| Editor de vídeo IA | `.claude/agents/editor-video-ia.md` | `08-video.md` + vídeos em `midia/` |
 
 ## Onde ficam as coisas
 
